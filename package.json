@@ -1,0 +1,45 @@
+{
+  "name": "phoenix-yoga-pilates",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:setup": "bun run scripts/setup-database.ts",
+    "db:seed": "bun run scripts/seed-database.ts",
+    "db:migrate": "bun run scripts/migrate-database.ts",
+    "tick": "node scripts/commit.js",
+    "bump": "bunx bumpp",
+    "browser-tools-server": "bunx @agentdeskai/browser-tools-server@latest",
+    "browser-tools-mcp": "bunx @agentdeskai/browser-tools-mcp@latest"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.0",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "^15.4.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@auth/supabase-adapter": "^1.10.0",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.52.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "next": "^15.4.2",
+    "next-auth": "^4.24.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rxdb": "^16.16.0",
+    "rxjs": "^7.8.2"
+  }
+}
