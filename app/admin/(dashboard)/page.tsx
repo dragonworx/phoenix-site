@@ -1,8 +1,9 @@
 import { createClient } from '@/lib/supabase/server'
+import Link from 'next/link'
 
 export default async function AdminDashboard() {
   const supabase = await createClient()
-  
+
   // Get counts for dashboard
   const [promotions, blogPosts, instructors, submissions] = await Promise.all([
     supabase.from('promotions').select('id', { count: 'exact', head: true }),
@@ -21,7 +22,7 @@ export default async function AdminDashboard() {
   return (
     <div>
       <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
-      
+
       <div className="mt-8">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
@@ -31,9 +32,9 @@ export default async function AdminDashboard() {
                 <dd className="mt-1 text-3xl font-semibold text-gray-900">{stat.value}</dd>
               </div>
               <div className="bg-gray-50 px-4 py-4 sm:px-6">
-                <a href={stat.href} className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                <Link href={stat.href} className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
                   View all<span className="sr-only"> {stat.name}</span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -43,7 +44,7 @@ export default async function AdminDashboard() {
       <div className="mt-8">
         <h2 className="text-lg font-medium text-gray-900">Quick Actions</h2>
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <a
+          <Link
             href="/admin/promotions/new"
             className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
           >
@@ -52,9 +53,9 @@ export default async function AdminDashboard() {
               <p className="text-sm font-medium text-gray-900">Add New Promotion</p>
               <p className="text-sm text-gray-500">Create a new promotional banner</p>
             </div>
-          </a>
-          
-          <a
+          </Link>
+
+          <Link
             href="/admin/blog/new"
             className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
           >
@@ -63,9 +64,9 @@ export default async function AdminDashboard() {
               <p className="text-sm font-medium text-gray-900">Write Blog Post</p>
               <p className="text-sm text-gray-500">Create a new blog article</p>
             </div>
-          </a>
-          
-          <a
+          </Link>
+
+          <Link
             href="/admin/instructors/new"
             className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
           >
@@ -74,7 +75,7 @@ export default async function AdminDashboard() {
               <p className="text-sm font-medium text-gray-900">Add Instructor</p>
               <p className="text-sm text-gray-500">Add a new instructor profile</p>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

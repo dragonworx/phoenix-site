@@ -6,7 +6,7 @@ interface HeaderProps {
 
 export default function Header({ studioType }: HeaderProps) {
   const studioName = studioType.charAt(0).toUpperCase() + studioType.slice(1)
-  
+
   return (
     <header className="w-full border-b border-gray-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +14,7 @@ export default function Header({ studioType }: HeaderProps) {
           <Link href={`/${studioType}`} className="text-xl font-bold">
             Phoenix {studioName}
           </Link>
-          
+
           <div className="flex space-x-8">
             <Link href={`/${studioType}/blog`} className="hover:text-gray-600">
               Blog

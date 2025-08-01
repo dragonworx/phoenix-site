@@ -17,17 +17,17 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user }) {
       if (!user.email) return false
-      
+
       // Check if user is in admin whitelist
       const { data: adminUser } = await supabase
         .from('admin_whitelist')
         .select('email')
         .eq('email', user.email)
         .single()
-      
+
       return !!adminUser
     },
-    async session({ session, token }) {
+    async session({ session }) {
       if (session?.user?.email) {
         // Check admin status
         const { data: adminUser } = await supabase
@@ -35,7 +35,7 @@ export const authOptions: NextAuthOptions = {
           .select('email')
           .eq('email', session.user.email)
           .single()
-        
+
         session.user.isAdmin = !!adminUser
       }
       return session

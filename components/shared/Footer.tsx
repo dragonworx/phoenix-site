@@ -6,7 +6,7 @@ interface FooterProps {
 
 export default function Footer({ studioType }: FooterProps) {
   const studioName = studioType.charAt(0).toUpperCase() + studioType.slice(1)
-  
+
   return (
     <footer className="w-full bg-gray-100 border-t border-gray-200 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -17,7 +17,7 @@ export default function Footer({ studioType }: FooterProps) {
               Find balance and strength at our {studioType} studio
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
@@ -27,7 +27,7 @@ export default function Footer({ studioType }: FooterProps) {
               <li><Link href={`/${studioType}/contact`} className="hover:text-gray-600">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
@@ -37,7 +37,7 @@ export default function Footer({ studioType }: FooterProps) {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
           © {new Date().getFullYear()} Phoenix {studioName}. All rights reserved.
         </div>

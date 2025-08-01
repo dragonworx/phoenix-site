@@ -1,4 +1,5 @@
 import { AuthProvider } from '@/components/auth-provider'
+import React from 'react'
 
 export default function AdminLayout({
   children,

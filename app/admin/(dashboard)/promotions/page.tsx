@@ -1,9 +1,10 @@
 import { createClient } from '@/lib/supabase/server'
 import type { Promotion } from '@/types/database'
+import Link from 'next/link'
 
 export default async function PromotionsPage() {
   const supabase = await createClient()
-  
+
   const { data: promotions, error } = await supabase
     .from('promotions')
     .select('*')
@@ -23,12 +24,12 @@ export default async function PromotionsPage() {
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <a
+          <Link
             href="/admin/promotions/new"
             className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add promotion
-          </a>
+          </Link>
         </div>
       </div>
       <div className="mt-8 flow-root">
@@ -60,7 +61,7 @@ export default async function PromotionsPage() {
                   const startDate = promotion.start_date ? new Date(promotion.start_date) : null
                   const endDate = promotion.end_date ? new Date(promotion.end_date) : null
                   const isActive = (!startDate || startDate <= now) && (!endDate || endDate >= now)
-                  
+
                   return (
                     <tr key={promotion.id}>
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
