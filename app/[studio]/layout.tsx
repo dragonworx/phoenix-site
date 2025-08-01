@@ -1,7 +1,7 @@
-import Header from '@/components/shared/Header'
-import Footer from '@/components/shared/Footer'
-import React, { use } from 'react'
-import { notFound } from 'next/navigation'
+import Header from '@/components/shared/Header';
+import Footer from '@/components/shared/Footer';
+import React, { use } from 'react';
+import { notFound } from 'next/navigation';
 
 export default function StudioLayout({
   children,
@@ -10,11 +10,11 @@ export default function StudioLayout({
     children: React.ReactNode
     params: Promise<{ studio: string }>
 }) {
-  const resolvedParams = use(params)
-  const studioType = resolvedParams.studio as 'yoga' | 'pilates'
+  const resolvedParams = use(params);
+  const studioType = resolvedParams.studio as 'yoga' | 'pilates';
 
   if (studioType !== 'yoga' && studioType !== 'pilates') {
-    notFound()
+    notFound();
   }
 
   return (
@@ -23,5 +23,5 @@ export default function StudioLayout({
       <main className="flex-grow">{children}</main>
       <Footer studioType={studioType}/>
     </div>
-  )
+  );
 }

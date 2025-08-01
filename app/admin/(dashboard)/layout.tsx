@@ -1,17 +1,17 @@
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
-import { redirect } from 'next/navigation'
-import Link from 'next/link'
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions);
 
   if (!session || !session.user?.isAdmin) {
-    redirect('/admin/login')
+    redirect('/admin/login');
   }
 
   return (
@@ -89,5 +89,5 @@ export default async function DashboardLayout({
         </div>
       </main>
     </div>
-  )
+  );
 }

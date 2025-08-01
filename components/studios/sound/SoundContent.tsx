@@ -233,5 +233,5 @@ export default function SoundContent() {
         <p className="text-gray-500 mt-2">— Ancient Wisdom</p>
       </section>
     </div>
-  )
+  );
 }

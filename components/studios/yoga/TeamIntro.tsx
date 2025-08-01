@@ -126,5 +126,5 @@ export default function YogaTeamIntro() {
         <p className="text-gray-500">— Phoenix Yoga Teaching Team</p>
       </div>
     </div>
-  )
+  );
 }

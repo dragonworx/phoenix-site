@@ -121,5 +121,5 @@ export default function PilatesAboutContent() {
         <p className="text-gray-500 mt-2">— Joseph Pilates</p>
       </section>
     </div>
-  )
+  );
 }

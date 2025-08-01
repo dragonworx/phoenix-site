@@ -1,17 +1,17 @@
-import { createClient } from '@/lib/supabase/server'
-import type { BlogPost } from '@/types/database'
-import Link from 'next/link'
+import { createClient } from '@/lib/supabase/server';
+import type { BlogPost } from '@/types/database';
+import Link from 'next/link';
 
 export default async function BlogPage() {
-  const supabase = await createClient()
+  const supabase = await createClient();
 
   const { data: posts, error } = await supabase
     .from('blog_posts')
     .select('*')
-    .order('date', { ascending: false })
+    .order('date', { ascending: false });
 
   if (error) {
-    console.error('Error loading blog posts:', error)
+    console.error('Error loading blog posts:', error);
   }
 
   return (
@@ -97,5 +97,5 @@ export default async function BlogPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

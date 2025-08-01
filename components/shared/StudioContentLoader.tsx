@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
 // Define content types
 export type ContentType =
@@ -28,17 +28,17 @@ const contentComponents = {
     BookingBlurb: dynamic(() => import('@/components/studios/pilates/BookingBlurb')),
     ContactInfo: dynamic(() => import('@/components/studios/pilates/ContactInfo')),
     TeamIntro: dynamic(() => import('@/components/studios/pilates/TeamIntro')),
-  }
-}
+  },
+};
 
 export function getStudioContent(
   studio: StudioType,
-  contentType: ContentType
+  contentType: ContentType,
 ) {
-  return contentComponents[studio][contentType]
+  return contentComponents[studio][contentType];
 }
 
 // Utility function to validate studio type
 export function isValidStudio(studio: string): studio is StudioType {
-  return studio === 'yoga' || studio === 'pilates' || studio === 'sound'
+  return studio === 'yoga' || studio === 'pilates' || studio === 'sound';
 }

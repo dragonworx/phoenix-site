@@ -177,5 +177,5 @@ export default function PilatesTeamIntro() {
         <p className="text-gray-500">— Phoenix Pilates Instructor Team</p>
       </div>
     </div>
-  )
+  );
 }

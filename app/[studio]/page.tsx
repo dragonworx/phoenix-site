@@ -1,21 +1,21 @@
-import PromoCarousel from '@/components/shared/PromoCarousel'
-import { getStudioContent, isValidStudio } from '@/components/shared/StudioContentLoader'
-import { notFound } from 'next/navigation'
-import { use } from 'react'
+import PromoCarousel from '@/components/shared/PromoCarousel';
+import { getStudioContent, isValidStudio } from '@/components/shared/StudioContentLoader';
+import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 export default function StudioHomePage({
   params,
 }: {
   params: Promise<{ studio: string }>
 }) {
-  const resolvedParams = use(params)
+  const resolvedParams = use(params);
 
   if (!isValidStudio(resolvedParams.studio)) {
-    notFound()
+    notFound();
   }
 
-  const studioType = resolvedParams.studio
-  const HomeHero = getStudioContent(studioType, 'HomeHero')
+  const studioType = resolvedParams.studio;
+  const HomeHero = getStudioContent(studioType, 'HomeHero');
 
   // This would normally fetch from Supabase
   // For now, using placeholder data
@@ -31,8 +31,8 @@ export default function StudioHomePage({
       end_date: null,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-    }
-  ]
+    },
+  ];
 
   return (
     <div>
@@ -64,5 +64,5 @@ export default function StudioHomePage({
         </div>
       </div>
     </div>
-  )
+  );
 }

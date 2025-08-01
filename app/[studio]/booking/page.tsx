@@ -1,20 +1,20 @@
-import { getStudioContent, isValidStudio } from '@/components/shared/StudioContentLoader'
-import { notFound } from 'next/navigation'
-import { use } from 'react'
+import { getStudioContent, isValidStudio } from '@/components/shared/StudioContentLoader';
+import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 export default function BookingPage({
   params,
 }: {
   params: Promise<{ studio: string }>
 }) {
-  const resolvedParams = use(params)
+  const resolvedParams = use(params);
 
   if (!isValidStudio(resolvedParams.studio)) {
-    notFound()
+    notFound();
   }
 
-  const studioType = resolvedParams.studio
-  const BookingBlurb = getStudioContent(studioType, 'BookingBlurb')
+  const studioType = resolvedParams.studio;
+  const BookingBlurb = getStudioContent(studioType, 'BookingBlurb');
 
   return (
     <div>
@@ -32,5 +32,5 @@ export default function BookingPage({
         </div>
       </div>
     </div>
-  )
+  );
 }

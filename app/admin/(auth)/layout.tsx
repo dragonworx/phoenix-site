@@ -7,5 +7,5 @@ export default function AuthLayout({
     <div className="min-h-screen bg-gray-50">
       {children}
     </div>
-  )
+  );
 }

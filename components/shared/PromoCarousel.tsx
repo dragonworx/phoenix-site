@@ -1,40 +1,40 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { Promo } from '@/types'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useEffect, useState } from 'react';
+import { Promo } from '@/types';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface PromoCarouselProps {
   promos: Promo[]
 }
 
 export default function PromoCarousel({ promos }: PromoCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const activePromos = promos.filter(promo => {
-    const now = new Date()
-    const start = promo.start_date ? new Date(promo.start_date) : null
-    const end = promo.end_date ? new Date(promo.end_date) : null
+    const now = new Date();
+    const start = promo.start_date ? new Date(promo.start_date) : null;
+    const end = promo.end_date ? new Date(promo.end_date) : null;
 
-    if (!start && !end) return true
-    if (start && end) return now >= start && now <= end
-    if (start) return now >= start
-    if (end) return now <= end
-    return false
-  })
+    if (!start && !end) return true;
+    if (start && end) return now >= start && now <= end;
+    if (start) return now >= start;
+    if (end) return now <= end;
+    return false;
+  });
 
   useEffect(() => {
-    if (activePromos.length <= 1) return
+    if (activePromos.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % activePromos.length)
-    }, 5000)
+      setCurrentIndex((prev) => (prev + 1) % activePromos.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [activePromos.length])
+    return () => clearInterval(interval);
+  }, [activePromos.length]);
 
-  if (activePromos.length === 0) return null
+  if (activePromos.length === 0) return null;
 
   return (
     <div className="relative w-full h-64 overflow-hidden bg-gray-100">
@@ -79,5 +79,5 @@ export default function PromoCarousel({ promos }: PromoCarouselProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

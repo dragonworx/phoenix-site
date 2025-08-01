@@ -85,7 +85,7 @@ export default function PilatesBlogIntro() {
           {[
             'Beginner Basics', 'Advanced Techniques', 'Injury Prevention',
             'Mat Work', 'Equipment Focus', 'Anatomy', 'Client Spotlights',
-            'Studio News'
+            'Studio News',
           ].map((category) => (
             <span
               key={category}
@@ -97,5 +97,5 @@ export default function PilatesBlogIntro() {
         </div>
       </div>
     </div>
-  )
+  );
 }

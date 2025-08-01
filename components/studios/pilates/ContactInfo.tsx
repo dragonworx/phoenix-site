@@ -182,5 +182,5 @@ export default function PilatesContactInfo() {
         <p className="text-gray-500 mt-2">— Joseph Pilates</p>
       </div>
     </div>
-  )
+  );
 }

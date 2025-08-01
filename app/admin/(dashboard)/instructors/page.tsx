@@ -1,18 +1,18 @@
-import { createClient } from '@/lib/supabase/server'
-import type { Instructor } from '@/types/database'
-import Link from 'next/link'
-import Image from 'next/image'
+import { createClient } from '@/lib/supabase/server';
+import type { Instructor } from '@/types/database';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function InstructorsPage() {
-  const supabase = await createClient()
+  const supabase = await createClient();
 
   const { data: instructors, error } = await supabase
     .from('instructors')
     .select('*')
-    .order('first_name', { ascending: true })
+    .order('first_name', { ascending: true });
 
   if (error) {
-    console.error('Error loading instructors:', error)
+    console.error('Error loading instructors:', error);
   }
 
   return (
@@ -127,5 +127,5 @@ export default async function InstructorsPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

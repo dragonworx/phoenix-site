@@ -1,19 +1,19 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold mb-8 text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-24">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-8 text-center">
         Welcome to Phoenix Wellness
       </h1>
-      <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl">
+      <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 text-center max-w-2xl">
         Choose your path to wellness and transformation
       </p>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl w-full">
         <Link
           href="/yoga"
-          className="group rounded-lg border border-transparent px-8 py-12 transition-colors hover:border-orange-300 hover:bg-orange-50 text-center"
+          className="group rounded-lg border border-transparent px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 transition-colors hover:border-orange-300 hover:bg-orange-50 text-center"
         >
           <div className="mb-4 flex justify-center">
             <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-200 transition-colors">
@@ -35,7 +35,7 @@ export default function Home() {
 
         <Link
           href="/pilates"
-          className="group rounded-lg border border-transparent px-8 py-12 transition-colors hover:border-blue-300 hover:bg-blue-50 text-center"
+          className="group rounded-lg border border-transparent px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 transition-colors hover:border-blue-300 hover:bg-blue-50 text-center"
         >
           <div className="mb-4 flex justify-center">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
@@ -57,7 +57,7 @@ export default function Home() {
 
         <Link
           href="/sound"
-          className="group rounded-lg border border-transparent px-8 py-12 transition-colors hover:border-purple-300 hover:bg-purple-50 text-center"
+          className="group rounded-lg border border-transparent px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 transition-colors hover:border-purple-300 hover:bg-purple-50 text-center"
         >
           <div className="mb-4 flex justify-center">
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors">
@@ -78,5 +78,5 @@ export default function Home() {
         </Link>
       </div>
     </main>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { AuthProvider } from '@/components/auth-provider'
-import React from 'react'
+import { AuthProvider } from '@/components/auth-provider';
+import React from 'react';
 
 export default function AdminLayout({
   children,
@@ -10,5 +10,5 @@ export default function AdminLayout({
     <AuthProvider>
       {children}
     </AuthProvider>
-  )
+  );
 }

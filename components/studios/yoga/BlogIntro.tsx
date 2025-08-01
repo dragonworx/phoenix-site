@@ -54,7 +54,7 @@ export default function YogaBlogIntro() {
         <div className="flex flex-wrap justify-center gap-3">
           {[
             'Beginner Tips', 'Advanced Asanas', 'Meditation', 'Breathwork',
-            'Yoga Philosophy', 'Seasonal Practice', 'Self-Care', 'Mindfulness'
+            'Yoga Philosophy', 'Seasonal Practice', 'Self-Care', 'Mindfulness',
           ].map((topic) => (
             <span
               key={topic}
@@ -66,5 +66,5 @@ export default function YogaBlogIntro() {
         </div>
       </div>
     </div>
-  )
+  );
 }

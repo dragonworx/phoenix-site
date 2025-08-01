@@ -89,5 +89,5 @@ export default function YogaAboutContent() {
         <p className="text-gray-500 mt-2">— Sakyong Mipham</p>
       </section>
     </div>
-  )
+  );
 }

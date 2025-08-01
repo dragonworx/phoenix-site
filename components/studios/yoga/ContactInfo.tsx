@@ -142,5 +142,5 @@ export default function YogaContactInfo() {
         </div>
       </div>
     </div>
-  )
+  );
 }

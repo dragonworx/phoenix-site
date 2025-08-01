@@ -1,23 +1,23 @@
-import { createClient } from '@/lib/supabase/server'
-import Link from 'next/link'
+import { createClient } from '@/lib/supabase/server';
+import Link from 'next/link';
 
 export default async function AdminDashboard() {
-  const supabase = await createClient()
+  const supabase = await createClient();
 
   // Get counts for dashboard
   const [promotions, blogPosts, instructors, submissions] = await Promise.all([
     supabase.from('promotions').select('id', { count: 'exact', head: true }),
     supabase.from('blog_posts').select('id', { count: 'exact', head: true }),
     supabase.from('instructors').select('id', { count: 'exact', head: true }),
-    supabase.from('contact_submissions').select('id', { count: 'exact', head: true })
-  ])
+    supabase.from('contact_submissions').select('id', { count: 'exact', head: true }),
+  ]);
 
   const stats = [
     { name: 'Total Promotions', value: promotions.count || 0, href: '/admin/promotions' },
     { name: 'Total Blog Posts', value: blogPosts.count || 0, href: '/admin/blog' },
     { name: 'Total Instructors', value: instructors.count || 0, href: '/admin/instructors' },
-    { name: 'Contact Submissions', value: submissions.count || 0, href: '/admin/submissions' }
-  ]
+    { name: 'Contact Submissions', value: submissions.count || 0, href: '/admin/submissions' },
+  ];
 
   return (
     <div>
@@ -79,5 +79,5 @@ export default async function AdminDashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -136,5 +136,5 @@ export default function PilatesBookingBlurb() {
         </div>
       </div>
     </div>
-  )
+  );
 }

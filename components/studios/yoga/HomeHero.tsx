@@ -1,26 +1,26 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function YogaHomeHero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-orange-50 to-amber-50" />
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-light text-gray-800 mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-800 mb-4 sm:mb-6">
           Find Your Inner Peace
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 font-light">
           Transform your mind, body, and spirit through the ancient practice of yoga
         </p>
-        <div className="space-x-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
           <Link
             href="/yoga/booking"
-            className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full hover:bg-orange-600 transition-colors"
+            className="inline-block bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-orange-600 transition-colors text-sm sm:text-base"
           >
             Book Your First Class
           </Link>
           <Link
             href="/yoga/about"
-            className="inline-block border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full hover:bg-orange-50 transition-colors"
+            className="inline-block border-2 border-orange-500 text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-orange-50 transition-colors text-sm sm:text-base"
           >
             Learn More
           </Link>
@@ -32,5 +32,5 @@ export default function YogaHomeHero() {
         </svg>
       </div>
     </section>
-  )
+  );
 }

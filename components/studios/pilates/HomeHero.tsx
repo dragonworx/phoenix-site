@@ -1,26 +1,26 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function PilatesHomeHero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-slate-50" />
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-light text-gray-800 mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-800 mb-4 sm:mb-6">
           Strengthen Your Core
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 font-light">
           Build strength, flexibility, and control through precision movement
         </p>
-        <div className="space-x-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
           <Link
             href="/pilates/booking"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors"
+            className="inline-block bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base"
           >
             Start Your Journey
           </Link>
           <Link
             href="/pilates/about"
-            className="inline-block border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-colors"
+            className="inline-block border-2 border-blue-600 text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-blue-50 transition-colors text-sm sm:text-base"
           >
             Discover More
           </Link>
@@ -32,5 +32,5 @@ export default function PilatesHomeHero() {
         </svg>
       </div>
     </section>
-  )
+  );
 }

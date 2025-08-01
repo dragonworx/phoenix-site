@@ -1,17 +1,17 @@
-import { createClient } from '@/lib/supabase/server'
-import type { Promotion } from '@/types/database'
-import Link from 'next/link'
+import { createClient } from '@/lib/supabase/server';
+import type { Promotion } from '@/types/database';
+import Link from 'next/link';
 
 export default async function PromotionsPage() {
-  const supabase = await createClient()
+  const supabase = await createClient();
 
   const { data: promotions, error } = await supabase
     .from('promotions')
     .select('*')
-    .order('created_at', { ascending: false })
+    .order('created_at', { ascending: false });
 
   if (error) {
-    console.error('Error loading promotions:', error)
+    console.error('Error loading promotions:', error);
   }
 
   return (
@@ -57,10 +57,10 @@ export default async function PromotionsPage() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {promotions?.map((promotion: Promotion) => {
-                  const now = new Date()
-                  const startDate = promotion.start_date ? new Date(promotion.start_date) : null
-                  const endDate = promotion.end_date ? new Date(promotion.end_date) : null
-                  const isActive = (!startDate || startDate <= now) && (!endDate || endDate >= now)
+                  const now = new Date();
+                  const startDate = promotion.start_date ? new Date(promotion.start_date) : null;
+                  const endDate = promotion.end_date ? new Date(promotion.end_date) : null;
+                  const isActive = (!startDate || startDate <= now) && (!endDate || endDate >= now);
 
                   return (
                     <tr key={promotion.id}>
@@ -98,7 +98,7 @@ export default async function PromotionsPage() {
                         </a>
                       </td>
                     </tr>
-                  )
+                  );
                 })}
               </tbody>
             </table>
@@ -111,5 +111,5 @@ export default async function PromotionsPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
